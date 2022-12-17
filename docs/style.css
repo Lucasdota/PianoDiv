@@ -1,0 +1,115 @@
+/*to include default paddings and borders to total width and height of elements*/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(gray, rgb(247, 130, 109));
+    height:100vh;
+    overflow: hidden;
+    font-family: Dejavu Sans, Arial, Verdana, sans-serif;
+}
+
+.piano{
+    background-color: #00471b;
+    width: 992px;
+    height: 290px;
+    margin: 80px auto;
+    padding: 90px 20px 0 20px;
+    border-radius: 10px;
+}
+
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top:-5em;
+    width:100%;
+    height:35%;
+}
+
+.logo>h1{
+    color:ivory;
+    text-shadow:0 0 5px rgb(212, 207, 207);
+    text-transform: uppercase;
+    margin-left:32%;
+    text-align: center;
+}
+
+img{
+    width:5.2rem;
+}
+
+.keys{
+    background-color: #040404;
+    width: 949px;
+    height: 190px;
+    padding-left: 2px;
+    overflow: hidden; /*prevents next line of content from showing up*/
+}
+
+.key{
+    background-color: #ffffff;
+    position:relative; /*to help position the black-keys*/
+    width: 41px;
+    height: 185px;
+    margin: 2px;
+    float:left; /*align it all on the same line, like a flexbox; float was chosen 
+    instead of flexbox because when you shrink a flexbox, all of its children 
+    shrinks with it, this is bad when resizing to smaller devices*/
+    border-radius: 0 0 3px 3px;
+}
+
+.key.black--key::after{
+    background-color: #1d1e22;
+    content: ""; /*to be rendered by the page*/
+    position: absolute; /*to overlay the white-keys*/
+    left: -18px;
+    width: 32px;
+    height: 100px;
+    border-radius: 0 0 3px 3px;
+}
+
+/*phones*/
+@media (max-width: 768px) {
+    .piano {
+      width: 358px;
+    }
+  
+    .keys {
+      width: 318px;
+    }
+  
+    .logo {
+      width: 150px;
+    }
+
+    h1{
+      font-size:20px;
+    }
+ 
+}
+
+/*tablets and small desktops*/
+@media (max-width: 1199px) and (min-width: 769px) {
+    .piano{
+      width:675px;
+    }
+  
+    .keys{
+      width:633px;
+    }
+
+    .logo{
+      width:550px;
+    }
+
+    h1{
+      font-size:25px;
+    }
+  
+}
+
+
+
+
